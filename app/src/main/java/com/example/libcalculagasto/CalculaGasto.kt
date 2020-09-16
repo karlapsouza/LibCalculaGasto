@@ -21,9 +21,8 @@ class CalculateSpend() {
 
     fun getValue(idCurrency: Int) : Double {
         var value : Double = 0.0
-        val retrofitClient = NetworkUtils\
-        val url = "https://economia.awesomeapi.com.br/json/daily/${returnCurrencyValue(idCurrency)}/1/"
-            .getRetrofitInstance(url)
+        val retrofitClient = NetworkUtils
+            .getRetrofitInstance("https://economia.awesomeapi.com.br/json/daily/${returnCurrencyValue(idCurrency)}/1/")
 
         val endpoint = retrofitClient.create(Endpoint::class.java)
         val callback = endpoint.getCurrencies()
@@ -35,7 +34,7 @@ class CalculateSpend() {
 
             override fun onResponse(call: Call<List<Currencies>>, response: Response<List<Currencies>>) {
                 response.body()?.forEach {
-                    value = it.bid.toDouble()
+                    value = it.bid
                 }
             }
         })
