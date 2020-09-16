@@ -19,7 +19,7 @@ class CalculateSpend() {
         return currency
     }
 
-    fun getValue(idCurrency: Int) : Double {
+    private fun getValue(idCurrency: Int) : Double {
         var value : Double = 0.0
         val retrofitClient = NetworkUtils
             .getRetrofitInstance("https://economia.awesomeapi.com.br/json/daily/${returnCurrencyValue(idCurrency)}/1")
@@ -48,7 +48,7 @@ class CalculateSpend() {
 
         var valueExpenditureConverted : Double = 0.0
 
-        if(currencyValuePay == null){
+        if(currencyValuePay == 0.0){
             valueExpenditureConverted = spendValue * getValue(idCurrency)
         }else{
             valueExpenditureConverted = spendValue * currencyValuePay
