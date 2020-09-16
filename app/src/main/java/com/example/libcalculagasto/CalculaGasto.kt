@@ -19,7 +19,7 @@ class CalculateSpend() {
         return currency
     }
 
-    private fun getValue(idCurrency: Int) : Double {
+    fun getValue(idCurrency: Int) : Double {
         var value : Double = 0.0
         val retrofitClient = NetworkUtils\
         val url = "https://economia.awesomeapi.com.br/json/daily/${returnCurrencyValue(idCurrency)}/1/"
