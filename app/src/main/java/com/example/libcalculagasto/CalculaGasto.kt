@@ -22,7 +22,7 @@ class CalculateSpend() {
     private fun getValue(idCurrency: Int) : Double {
         var value : Double = 0.0
         val retrofitClient = NetworkUtils
-            .getRetrofitInstance("https://economia.awesomeapi.com.br/json/daily/${returnCurrencyValue(idCurrency)}/1")
+            .getRetrofitInstance("https://economia.awesomeapi.com.br/json/daily/${returnCurrencyValue(idCurrency)}/1/")
 
         val endpoint = retrofitClient.create(Endpoint::class.java)
         val callback = endpoint.getCurrencies()
