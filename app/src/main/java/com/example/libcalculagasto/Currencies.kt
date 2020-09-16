@@ -10,5 +10,5 @@ data class Currencies(
     @SerializedName("name")
     var name : String,
     @SerializedName("bid")
-    var value : Double
+    var bid : Double
 )
