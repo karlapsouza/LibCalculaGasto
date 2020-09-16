@@ -35,7 +35,7 @@ class CalculateSpend() {
 
             override fun onResponse(call: Call<List<Currencies>>, response: Response<List<Currencies>>) {
                 response.body()?.forEach {
-                    value = it.value
+                    value = it.value.toDouble()
                 }
             }
         })
